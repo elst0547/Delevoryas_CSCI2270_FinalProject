@@ -55,6 +55,7 @@ Peter Delevoryas
 # Open Issues/Bugs
 * Issue: very little error checking between processes
 * Issue: if two servers are running on the same port, client does not indicate there is an issue
+	-Fix: Added a vector to keep track of the ports that are currently in use and then compare the new port being created to the vector of ports to make sure it hasn't been used previously. Outputs error message if found to already be in use. One problem with my fix might be that it never removes the ports from the vector, so if one was deleted it would not remove the port from the vector. -elst0547
 * Issue: Windows support
 * If You have a bug to submit, add it to this portion of the README, and submit a pull request!
 
